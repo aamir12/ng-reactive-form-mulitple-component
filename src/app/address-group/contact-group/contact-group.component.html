@@ -1,0 +1,15 @@
+<ng-container [formGroup]="form">
+  <fieldset class="border p-4 rounded address-group">
+    <legend *ngIf="title">{{ title }}</legend>
+    <div [formGroupName]="controlKey">
+      <div class="mb-3">
+        <label class="form-label">Mobile</label>
+        <input type="text" class="form-control" formControlName="mobile" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input type="text" class="form-control" formControlName="phone" />
+      </div>
+    </div>
+  </fieldset>
+</ng-container>

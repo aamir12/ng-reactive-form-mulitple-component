@@ -1,0 +1,22 @@
+<ng-container [formGroup]="form">
+  <fieldset class="border p-4 rounded address-group">
+    <legend *ngIf="title">{{ title }}</legend>
+    <div [formGroupName]="controlKey">
+      <div class="mb-3">
+        <label class="form-label">Zip Code</label>
+        <input type="text" class="form-control" formControlName="zipCode" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Street</label>
+        <input type="text" class="form-control" formControlName="street" />
+      </div>
+    </div>
+
+    <app-contact-group
+      *ngIf="address"
+      controlKey="contactDetail"
+      [form]="address"
+      title="Contact Detail (Nested)"
+    ></app-contact-group>
+  </fieldset>
+</ng-container>
